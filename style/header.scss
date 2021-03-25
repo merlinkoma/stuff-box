@@ -1,0 +1,28 @@
+@import 'variables';
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    header{
+        nav.navbar{
+            background-color: $goldengrey;
+            div.container-fluid{
+                a.navbar-brand{
+                    color: $darkgrey;
+                }
+                ul.navbar-nav{
+                    button.btn-dark{
+                        background-color: $darkgrey;
+                        border-color: $darkgrey;
+                    }
+                    li.nav-item{
+                        a.nav-link{
+                            color: $light;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
