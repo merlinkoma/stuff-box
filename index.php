@@ -5,7 +5,7 @@ $title = "Home";
 @include './header.php'
 ?>
 
-<img src="./img/forest.jpg" id="banner" alt="">
+
 <div class="accordion accordion-flush" id="accordionFlushExample">
 	<div class="accordion-item">
 		<h2 class="accordion-header" id="flush-headingOne">
@@ -18,7 +18,7 @@ $title = "Home";
 				<ul class="list-group mt-2 mb-2">
 					<li class="list-group-item">Structure du site en HTML</li>
 					<li class="list-group-item">Utilisation de Bootstrap 5.0, ajustements en SCSS, compilation CSS</li>
-					<li class="list-group-item">Intégration du PHP</li>
+					<li class="list-group-item">Intégration du PHP from scratch</li>
 					<li class="list-group-item">Gestion d'une base de données via MySQL Workbench</li>
 				</ul>
 				L'idée de Stuff Box est venue bien avant que j'aie des compétences en développement web. La toute première version a été réalisée par un ami et permettait à un utilisateur de voir le contenu de ma bibliothèque pour éventuellement demander un prêt et était pour moi un outil de gestion de prêts. Dès que nous avons abordé le PHP en formation, j'ai repris ce projet du début pour m'entraîner et aboutir à la version actuellement en ligne.
@@ -51,7 +51,7 @@ $title = "Home";
 		</h2>
 		<div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
 			<div class="accordion-body">Je m'appelle Mélissa Ameye, je suis stagiaire de la formation chez M2i-Formations pour passer le titre professionnel de Développeur web/ web mobile.
-				J'ai débuté cette formation en novembre 2020 et elle se terminera en août 2021. Il s'agit d'une reconversion professionnelle, j'étais auparavent régisseure des oeuvres ; j'ai choisi le développement web car le domaine m'a toujours intéressée et il peut aujourd'hui la stabilité professionnelle que je cherche.
+				J'ai débuté cette formation en novembre 2020 et elle se terminera en août 2021. Il s'agit d'une reconversion professionnelle, j'étais auparavent régisseure des oeuvres ; j'ai choisi le développement web car le domaine m'a toujours intéressée et il peut aujourd'hui me donner la stabilité professionnelle que je cherche.
 			</div>
 		</div>
 	</div>
@@ -97,6 +97,8 @@ $title = "Home";
 		<span class="visually-hidden">Next</span>
 	</button>
 </div>
+
+<?php @include './footer.php ' ?>
 
 </body>
 

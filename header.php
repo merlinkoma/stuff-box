@@ -53,5 +53,6 @@ $style = "header";
                     </ul>
                 </div>
             </nav>
+            <img src="./img/forest.jpg" id="banner" alt="">
         </header>
     

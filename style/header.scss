@@ -4,7 +4,10 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    header{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
         nav.navbar{
             background-color: $goldengrey;
             div.container-fluid{
@@ -23,6 +26,5 @@ body{
                     }
                 }
             }
-        }
-    }
+        }   
 }

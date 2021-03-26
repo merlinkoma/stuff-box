@@ -2,18 +2,22 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-body header nav.navbar {
+body nav.navbar {
   background-color: #989985;
 }
-body header nav.navbar div.container-fluid a.navbar-brand {
+body nav.navbar div.container-fluid a.navbar-brand {
   color: #4A484A;
 }
-body header nav.navbar div.container-fluid ul.navbar-nav button.btn-dark {
+body nav.navbar div.container-fluid ul.navbar-nav button.btn-dark {
   background-color: #4A484A;
   border-color: #4A484A;
 }
-body header nav.navbar div.container-fluid ul.navbar-nav li.nav-item a.nav-link {
+body nav.navbar div.container-fluid ul.navbar-nav li.nav-item a.nav-link {
   color: #F3F4EF;
 }
 

@@ -1,4 +1,5 @@
 <?php
+
 //En cas de redirection trop bas dans la page, pour éviter une erreur :
 ob_start();
 $style = "signup";
@@ -71,43 +72,47 @@ if (!empty($_POST)) {
         //On redirige ensuite l'utilisateur vers la page d'accueil.
         //Nb : s'il y a une erreur, vérifier la présente du ob_start() en haut du fichier.
         header('Location: index.php');
-    } else { ?>
-        <ul class="alert alert-danger" role="alert">
-            <?php
-            foreach ($errors as $error) {
-                echo '<li>' . $error . '</li>';
-            }
-            ?>
-        </ul>
-<?php }
+    }
 }
 
 ?>
-<div class="container">
+<div class="px-4 py-4 signup">
     <!-- Méthode POST pour cacher en partie les données sensibles (mot de passe) -->
     <form action="" method="POST">
 
-        <h1>Créer un compte</h1>
+        <h1 class="display-6">Créer un compte</h1>
 
         <label for="firstname">Prénom</label>
-        <input type="text" name="firstname" id="firstname" class="form-control">
+        <input type="text" name="firstname" id="firstname" class="form-control" value="<?= $firstname; ?>">
+        <?php if (isset($errors['firstname'])) { ?>
+            <div class="alert alert-danger"><?= $errors['firstname'] ?></div>
+        <?php } ?>
 
         <label for="lastname">Nom de famille</label>
-        <input type="text" name="lastname" id="lastname" class="form-control">
+        <input type="text" name="lastname" id="lastname" class="form-control" value="<?= $lastname; ?>">
+        <?php if (isset($errors['lastname'])) { ?>
+            <div class="alert alert-danger"><?= $errors['firstname'] ?></div>
+        <?php } ?>
 
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" class="form-control">
+        <input type="email" name="email" id="email" class="form-control" value="<?= $email; ?>">
+        <?php if (isset($errors['email'])) { ?>
+            <div class="alert alert-danger"><?= $errors['email'] ?></div>
+        <?php } ?>
 
         <label for="password">Mot de passe</label>
         <input type="password" name="password" id="password" class="form-control">
 
         <label for="cf-password">Confirmer le mot de passe</label>
         <input type="password" name="cf-password" id="cf-password" class="form-control">
+        <?php if (isset($errors['password'])) { ?>
+            <div class="alert alert-danger"><?= $errors['password'] ?></div>
+        <?php } ?>
 
-        <button class="btn btn-dark">Envoyer</button>
+        <button class="btn btn-dark m-2">Envoyer</button>
     </form>
 </div>
-
+<?php @include './footer.php ' ?>
 </body>
 
 </html>
