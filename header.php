@@ -19,40 +19,68 @@ $style = "header";
 
 <body>
 
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand fs-3 text ms-4" href="index.php">Merlin's Stuff Box</a>
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
-                        <li class="nav-item">
-                            <a class="nav-link mx-2" href="library.php">Bibliothèque de prêt</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-2" href="#">A vendre</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-2" href="#">A donner</a>
-                        </li>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand fs-3 text ms-4" href="index.php">Merlin's Stuff Box</a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="library.php">Bibliothèque de prêt</a>
+                    </li>
 
-                        <li class="nav-item dropdown mx-2">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Connexion
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Se connecter</a></li>
-                                <li><a class="dropdown-item" href="./signup.php">Créer un compte</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="#">A vendre</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="#">A donner</a>
+                    </li>
+
+                    <li class="nav-item dropdown mx-2">
+
+                        <?php
+
+                        if (isset($_SESSION['user'])) { ?>
+
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?= $_SESSION['user']['email'] ?></a>
+
+                        <?php } else { ?>
+
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Connexion</a> <?php } ?>
+
+
+
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <?php if (!isset($_SESSION['user'])) { ?>
                                 <li>
-                                    <hr class="dropdown-divider">
+                                    <a class="dropdown-item" href="./login.php">Se connecter</a>
                                 </li>
-                                <li><a class="dropdown-item" href="#">Administration</a></li>
-                            </ul>
-                        </li>
+                            <?php }else{ ?>
+                                <li>
+                                    <a class="dropdown-item" href="./logout.php">Se déconnecter</a>
+                                </li>
+                            <?php } ?>
 
-                        <button type="button" class="btn btn-dark">Changer la langue</button>
+                            <?php if (!isset($_SESSION['user'])) { ?>
+                                <li><a class="dropdown-item" href="./signup.php">Créer un compte</a>
+                                </li>
+                            <?php } ?>
 
-                    </ul>
-                </div>
-            </nav>
-            <img src="./img/forest.jpg" id="banner" alt="">
-        </header>
-    
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <li><a class="dropdown-item" href="#">Administration</a>
+                            </li>
+                        </ul>
+
+                    </li>
+
+                    <button type="button" class="btn btn-dark">Changer la langue</button>
+
+                </ul>
+            </div>
+        </nav>
+        <img src="./img/forest.jpg" id="banner" alt="">
+    </header>
